@@ -52,8 +52,13 @@ class Daemon:
 		atexit.register(self.delpid)
 
 		pid = str(os.getpid())
-		with open(self.pidfile,'w+') as f:
-			f.write(pid + '\n')
+		try:
+			with open(self.pidfile,'w+') as f:
+				f.write(pid + '\n')
+		except IOError as err:
+			message = "Failed:{0}"
+			sys.stderr.write(message.format(err))
+			sys.exit(1)	
 	
 	def delpid(self):
 		os.remove(self.pidfile)
