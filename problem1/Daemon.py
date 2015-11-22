@@ -1,6 +1,10 @@
 """Generic linux daemon base class for python 3.x."""
 
-import sys, os, time, atexit, signal
+import sys
+import os
+import time
+import atexit
+import signal
 
 
 class Daemon:
@@ -10,7 +14,6 @@ class Daemon:
 
     def __init__(self, pidfile):
         self.pidfile = pidfile
-        self.log_file = open('systemMonitoring.log', 'w+')
 
     def daemonize(self):
         """Deamonize class. UNIX double fork mechanism."""
@@ -89,7 +92,6 @@ class Daemon:
     def stop(self):
         """Stop the daemon."""
 
-        self.logFile.close()
         # Get the pid from the pidfile
         try:
             with open(self.pidfile, 'r') as pf:
