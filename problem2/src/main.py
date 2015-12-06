@@ -5,12 +5,14 @@
 @author: Paweł Pęksa
 """
 
-from BooksParser import BooksParser
+from src.BooksParser import BooksParser
+import logging
 
 if __name__ == '__main__':
-    print('Lab 01 | Problem 2')
+    logging.info('Lab 01 | Problem 2')
     parser = BooksParser("Books.xml")
     parser.parse()
+    parser.print_books()
 
 
 

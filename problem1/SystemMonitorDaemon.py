@@ -16,7 +16,7 @@ from Configuration import Configuration as Conf
 class SystemMonitorDaemon(Daemon):
     """Daemon class providing system monitoring for cpu, memory and network"""
     def __init__(self, pidfile):
-        Daemon.__init__(self,pidfile)
+        Daemon.__init__(self, pidfile)
         self._cpu = False
         self._network = False
         self._memory = False
