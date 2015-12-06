@@ -16,6 +16,19 @@ class Configuration:
     def __init__(self):
         pass
 
+    # launch options
+    ARG_NET = "-n"
+    ARG_NET_HELP = "Log netwrok information"
+
+    ARG_CPU = "-c"
+    ARG_CPU_HELP = "Log CPU information"
+
+    ARG_MEM = "-m"
+    ARG_MEM_HELP = "Log memory information"
+
+    ARG_START = "start"
+    ARG_STOP = "stop"
+    ARG_RESTART = "restart"
     # bash commands
 
     TRIM_ENTER_COMMAND = "| tr \"\n\" \" \""
