@@ -7,6 +7,7 @@
 
 import unittest
 from src.BooksParser import BooksParser
+import xml.etree.ElementTree as ET
 
 
 class BookParserTest(unittest.TestCase):
@@ -23,6 +24,9 @@ class BookParserTest(unittest.TestCase):
         parser.parse()
         self.assertNotEqual(0, len(parser._books_list))
 
+    def testIfXMLIncorrect(self):
+        parser = BooksParser("invalidBooks.xml")
+        self.assertRaises(ET.ParseError)
 
 if __name__ == '__main__':
     unittest.main()

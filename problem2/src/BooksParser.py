@@ -5,7 +5,7 @@
 @author: Paweł Pęksa
 """
 
-import xml.etree.ElementTree as et
+import xml.etree.ElementTree as ET
 import sys
 import logging
 from pprint import pprint
@@ -15,7 +15,7 @@ class BooksParser(object):
     def __init__(self, file_path):
         self._books_list = []
         try:
-            self._parsedBooks = et.parse(file_path).getroot()
+            self._parsedBooks = ET.parse(file_path).getroot()
         except Exception as e:
             logging.error(e)
             sys.exit(1)
